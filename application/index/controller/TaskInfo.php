@@ -10,6 +10,7 @@ namespace app\index\controller;
 
 use think\Request;
 use think\Db;
+use app\index\model\AtsTesttaskInfo;
 
 class TaskInfo
 {
@@ -29,9 +30,12 @@ class TaskInfo
         echo '<pre>';
         var_dump($info);
         echo '</pre>';
-
-
     }
 
+
+    public function getTaskInfoByModel(){
+        $info = AtsTesttaskInfo::get(1);
+        var_dump($info);
+    }
 
 }

@@ -32,10 +32,17 @@ class TaskInfo
         echo '</pre>';
     }
 
-
+    // use model
     public function getTaskInfoByModel(){
-        $info = AtsTesttaskInfo::get(1);
-        var_dump($info);
+        $ats = new AtsTesttaskInfo();
+        $info = $ats->select();
+        echo '<pre>';
+        var_dump($info[0]->getData());
+        echo '</pre>';
+        echo '-------------';
+        echo '<pre>';
+        var_dump($info[0]->getData('TestImage'));
+        echo '</pre>';
     }
 
 }

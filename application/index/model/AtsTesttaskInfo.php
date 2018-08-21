@@ -9,8 +9,8 @@
 namespace app\index\model;
 use think\Model;
 
-class Ats_Testtask_Info extends Model{
-//    protected $pk = 'uid';
+class AtsTesttaskInfo extends Model{
+    protected $pk = 'TaskID';
     protected $tableName = 'ats_testtask_info';
 
 }

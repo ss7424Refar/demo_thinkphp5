@@ -45,4 +45,45 @@ class TaskInfo
         echo '</pre>';
     }
 
+    public function addTaskInfo(){
+        $atsInfo = new AtsTesttaskInfo();
+
+        $atsInfo->TestImage='hello';
+        $atsInfo->DMIModifyFlag=1;
+
+        $atsInfo->save();
+        // 获取自增ID
+        echo $atsInfo->TaskID;
+
+    }
+
+    public function updateTaskInfo(){
+
+        $atsInfo = AtsTesttaskInfo::get(8);
+
+        echo $atsInfo->TestImage;
+
+        $atsInfo->TestImage = 'hello world';
+
+        $atsInfo->save();
+
+        echo '<pre>';
+        var_dump($atsInfo);
+        echo  '</pre>';
+
+    }
+
+
+    public function deleteTaskInfo(){
+        $atsInfo = AtsTesttaskInfo::get(8);
+
+        $atsInfo->delete();
+    }
+
+    public function toJson(){
+        $atsInfo = AtsTesttaskInfo::get(50);
+
+        echo $atsInfo->toJson();
+
+    }
 }
